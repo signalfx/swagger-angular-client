@@ -1,0 +1,35 @@
+{
+  "camelcase": true,
+  "newcap": true,
+  "undef": true,
+  "boss": true,
+  "eqnull": true,
+  "smarttabs": true,
+  "browser":true,
+  "forin": true,
+  "immed": true,
+  "noarg": true,
+  "quotmark": "single",
+  "unused": true,
+
+  "strict": false,
+  "trailing": false,
+  "curly": false,
+  "eqeqeq": false,
+  "latedef": false,
+
+  "globals": {
+    "console": true,
+    "confirm": true,
+    "angular": true,
+    "module": true,
+    "exports": true,
+    "Hogan": true,
+    "require": true,
+    "moment": true,
+    "timezoneJS": true,
+    "d3": true,
+    "nvtooltip": true,
+    "ngGridFlexibleHeightPlugin": true
+  }
+}

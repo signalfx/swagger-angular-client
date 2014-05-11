@@ -1,0 +1,22 @@
+{
+  "name": "client-side-seed",
+  "version": "0.0.0",
+  "homepage": "https://github.com/oztu/client-side-seed",
+  "authors": [
+    "Ozan Turgut <ozanturgut@gmail.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "APACHE 2",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}
