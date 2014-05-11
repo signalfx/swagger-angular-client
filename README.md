@@ -1,1 +1,1 @@
-# My seed project to reduce boilerplate setup for himself
+# My seed project to reduce boilerplate setup
