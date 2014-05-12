@@ -1,22 +1,37 @@
 {
   "name": "client-side-seed",
-  "version": "0.0.0",
+  "private": true,
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [],
+  "main": [
+    "dist/client-side-seed.css",
+    "dist/client-side-seed.js"
+  ],
   "homepage": "https://github.com/oztu/client-side-seed",
   "authors": [
     "Ozan Turgut <ozanturgut@gmail.com>"
   ],
   "moduleType": [
+    "amd",
+    "node",
     "globals"
   ],
   "license": "APACHE 2",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
+    "example",
+    "src",
     "test",
-    "tests"
+    "tests",
+    "Gruntfile.js",
+    "package.json"
   ],
-  "dependencies": {
-  }
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:oztu/client-side-seed.git"
+  },
+  "dependencies": {}
 }
