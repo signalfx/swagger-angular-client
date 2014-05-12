@@ -1,35 +1,21 @@
 {
+  // Enforce
   "camelcase": true,
   "newcap": true,
   "undef": true,
-  "boss": true,
-  "eqnull": true,
-  "smarttabs": true,
-  "browser":true,
   "forin": true,
   "immed": true,
   "noarg": true,
   "quotmark": "single",
+  "indent": 2,
   "unused": true,
 
-  "strict": false,
-  "trailing": false,
-  "curly": false,
-  "eqeqeq": false,
-  "latedef": false,
+  // Relax
+  "boss": true,
+  "eqnull": true,
 
-  "globals": {
-    "console": true,
-    "confirm": true,
-    "angular": true,
-    "module": true,
-    "exports": true,
-    "Hogan": true,
-    "require": true,
-    "moment": true,
-    "timezoneJS": true,
-    "d3": true,
-    "nvtooltip": true,
-    "ngGridFlexibleHeightPlugin": true
-  }
+  // Env
+  "browser":true,
+
+  "globals": {}
 }

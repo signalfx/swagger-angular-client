@@ -7,10 +7,22 @@ module.exports = function(grunt){
 		clean: { dist: ['dist'] },
 
 		browserify: {
-			dist: { files: { 'dist/<%= pkg.name %>.js': ['src/js/**.js']	} },
+			dist: { 
+				files: { 'dist/<%= pkg.name %>.js': ['src/js/module.js']	}
+			},
 			dev: {
-				files: { 'dist/<%= pkg.name %>.js': ['src/js/**.js'] },
-				options: {	bundleOptions: { debug: true } }	
+				files: { 'dist/<%= pkg.name %>.js': ['src/js/module.js'] },
+				options: {	
+					bundleOptions: { 
+						debug: true,
+						standalone: '<%= pkg.name %>'
+					} 
+				}
+			},
+			options: {
+				bundleOptions: {
+					standalone: '<%= pkg.name %>'	
+				}
 			}
 		},
 		
@@ -77,6 +89,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-browserify');
 	
 	grunt.registerTask('dev', [
