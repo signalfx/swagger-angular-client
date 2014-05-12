@@ -17,7 +17,10 @@
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-concat": "^0.4.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "grunt-contrib-connect": "^0.7.1",
+    "grunt-contrib-copy": "^0.5.0"
+  },
   "scripts": {
     "test": "exit 1"
   },

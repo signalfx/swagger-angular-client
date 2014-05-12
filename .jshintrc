@@ -11,11 +11,13 @@
   "unused": true,
 
   // Relax
+  "expr": true,
   "boss": true,
   "eqnull": true,
 
   // Env
   "browser":true,
+  "node": true,
 
   "globals": {}
 }

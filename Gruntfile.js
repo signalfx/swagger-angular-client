@@ -20,9 +20,7 @@ module.exports = function(grunt){
 				}
 			},
 			options: {
-				bundleOptions: {
-					standalone: '<%= pkg.name %>'	
-				}
+				bundleOptions: { standalone: '<%= pkg.name %>' }
 			}
 		},
 		
@@ -33,20 +31,17 @@ module.exports = function(grunt){
 		watch: {
 			devJS: {
 				files: ['src/js/**'],
-				tasks: ['browserify:dev', 'jshint:dev']
+				tasks: ['browserify:dev', 'copy', 'jshint:dev']
 			},
 			devCSS: {
 				files: ['src/css/**'],
-				tasks: ['compass:dist']
+				tasks: ['compass:dist', 'copy']
 			}
 		},
 
 		compass: {
 			dist: {
-				options: {
-					sassDir: 'src/css',
-					cssDir: 'dist'
-				}
+				options: { sassDir: 'src/css', cssDir: 'dist' }
 			}
 		},
 
@@ -79,6 +74,20 @@ module.exports = function(grunt){
 					helpers: 'test/**Helper.js'
 				}
 			}
+		},
+
+		copy: {
+			examples: {
+				files: [
+					{expand: true, src: ['dist/*'], dest: 'example/', filter: 'isFile'}
+				]
+			}
+		},
+
+		connect: {
+			server: {
+				options: { port: 8000, base: 'example' }
+			}
 		}
 	});
 	
@@ -89,7 +98,8 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-browserify');
 	
 	grunt.registerTask('dev', [
@@ -98,6 +108,8 @@ module.exports = function(grunt){
 		'browserify:dev',
 		'compass',
 		'jshint:dev',
+		'copy',
+		'connect',
 		'watch'
 	]);
 
