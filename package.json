@@ -11,7 +11,6 @@
     "grunt-contrib-uglify": "^0.4.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-contrib-cssmin": "^0.9.0",
-    "browserify": "^3.46.1",
     "grunt-browserify": "^2.0.8",
     "grunt-contrib-jasmine": "^0.6.4",
     "grunt-contrib-jshint": "^0.10.0",
