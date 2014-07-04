@@ -1,3 +1,9 @@
-node_modules
-bower_components
-.sass-cache
+# Local-only directory
+/local/
+
+# Module manager
+/node_modules/
+/bower_components/
+
+# Generated
+/.sass-cache
