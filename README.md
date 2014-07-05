@@ -27,12 +27,12 @@ test/
 # Technology
 gulp
 karma
+phantomjs
 browserify
 istanbul
-phantomjs
 jasmine
 jsbeautifier
 jshint
 less
-mincss
+csso
 uglify

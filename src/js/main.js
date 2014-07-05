@@ -1,10 +1,7 @@
 'use strict';
 
-module.exports = alertIt;
+var dependency = require('./dependency');
 
-window.alertIt = alertIt;
-
-function alertIt() {
-  console.log('hi');
-  return require('./dep.js')();
+module.exports = function(value) {
+  return dependency(value) + 10;
 };

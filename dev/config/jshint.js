@@ -58,5 +58,17 @@ module.exports = {
    */
 
   // Suppress warnings about == null comparisons.
-  eqnull: true
+  eqnull: true,
+
+  globals: {
+    // Jasmine Globals
+    beforeEach: true,
+    afterEach: true,
+    describe: true,
+    expect: true,
+    it: true,
+    spyOn: true,
+    xdescribe: true,
+    xit: true
+  }
 };
