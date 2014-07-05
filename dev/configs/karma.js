@@ -7,12 +7,11 @@ module.exports = {
     ],
     
     files: [
-        'src/js/**/*.js',
-        'test/**/*.js'
+        'src/js/**/*.js'
     ],
 
     preprocessors: {
-        '**/src/js/**/*.js' : ['coverage', 'commonjs']
+        '**/src/js/**/*!(Spec).js' : ['coverage', 'commonjs']
     },
 
     reporters: ['progress', 'coverage'],

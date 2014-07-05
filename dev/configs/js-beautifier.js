@@ -1,7 +1,7 @@
 module.exports = {
 	// Non-defaults
 	indent_size: 2,
-    wrap_line_length: 100,
+    wrap_line_length: 0,
 
     // Defaults (here for reference)
     // indent_size: 4,

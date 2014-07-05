@@ -1,3 +1,5 @@
-module.exports = function(){
-	return 112;
+'use strict';
+
+module.exports = function () {
+  return 112;
 };

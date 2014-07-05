@@ -6,10 +6,11 @@ module.exports = {
    */
 
   // Define globals exposed by modern browsers.
-  "browser": true,
+  browser: true,
 
   // Define globals exposed by Node.js.
-  "node": true,
+  node: true,
+
 
   /*
    * ENFORCING OPTIONS
@@ -17,38 +18,39 @@ module.exports = {
    */
 
   // Prohibit use of == and != in favor of === and !==.
-  "eqeqeq": true,
+  eqeqeq: true,
 
   // Enforce tab width of 2 spaces.
-  "indent": 2,
+  indent: 2,
 
   // Prohibit use of a variable before it is defined.
-  "latedef": true,
+  latedef: true,
 
   // Require capitalized names for constructor functions.
-  "newcap": true,
+  newcap: true,
 
   // Prohibit trailing whitespace.
-  "trailing": true,
+  trailing: true,
 
   // Force all variable names to use either camelCase style or UPPER_CASE
   // with underscores.
-  "camelcase": true,
+  camelcase: true,
 
   // Enforce use of single quotation marks for strings.
-  "quotmark": "single",
+  quotmark: 'single',
 
   // Prohibit use of explicitly undeclared variables.
-   "undef": true,
+  undef: true,
 
   // Warn when variables are defined but never used.
-   "unused": true,
+  unused: true,
 
   // Enforce line length to 80 characters
-   "maxlen": 80,
+  maxlen: 80,
 
   // Enforce placing 'use strict' at the top function scope
-   "strict": true,
+  strict: true,
+
 
   /*
    * RELAXING OPTIONS
@@ -56,5 +58,5 @@ module.exports = {
    */
 
   // Suppress warnings about == null comparisons.
-  "eqnull": true
+  eqnull: true
 };

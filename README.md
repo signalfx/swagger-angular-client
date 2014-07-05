@@ -17,9 +17,22 @@ gulp dev
 
 # Folders
 build/
-personal/
+local/
 dev/
 reports/
 src/
 example/
 test/
+
+# Technology
+gulp
+karma
+browserify
+istanbul
+phantomjs
+jasmine
+jsbeautifier
+jshint
+less
+mincss
+uglify

@@ -1,10 +1,10 @@
 {
-  "name": "",
+  "name": "seed",
   "version": "0.0.0",
   "private": true,
   "description": "",
   "keywords": [],
-  "main": "index.js",
+  "main": "./src/js/main.js",
   "devDependencies": {
     "vinyl-source-stream": "^0.1.1",
     "gulp-streamify": "0.0.5",
@@ -12,8 +12,6 @@
     "gulp-concat": "^2.2.0",
     "gulp": "^3.8.5",
     "browserify": "^4.2.0",
-    "watchify": "^0.10.2",
-    "exorcist": "^0.1.6",
     "gulp-sourcemaps": "^0.4.4",
     "del": "^0.1.1",
     "gulp-rename": "^1.2.0",
@@ -30,10 +28,10 @@
     "karma-coverage": "^0.2.4",
     "karma-browserify": "^0.2.1",
     "gulp-istanbul": "^0.2.0",
-    "karma-traceur-preprocessor": "^0.2.2",
-    "gulp-traceur": "^0.7.0",
-    "es6ify": "^1.2.0",
-    "browserify-istanbul": "^0.1.1"
+    "gulp-recess": "^0.3.1",
+    "gulp-csso": "^0.2.9",
+    "jshint-stylish": "^0.2.0",
+    "gulp-prettify": "^0.2.0"
   },
   "scripts": {
     "test": "exit 1"

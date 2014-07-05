@@ -24,9 +24,9 @@
     "bower_components",
     "example",
     "src",
-    "test",
-    "tests",
-    "Gruntfile.js",
+    "build",
+    "package.json",
+    "gulpfile.js",
     "package.json"
   ],
   "repository": {
