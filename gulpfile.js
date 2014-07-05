@@ -46,7 +46,7 @@ gulp.task('clean', function(done) {
 // execute testing and linting tasks.
 gulp.task('dev', ['example'], function() {
   gulp.watch([
-    jsSrcDir + '/**/*.js', 
+    jsSrcDir + '/**/*.js',
     '!' + jsSrcDir + '/**/*Spec.js'
   ], ['js']);
 
@@ -61,14 +61,16 @@ gulp.task('dev', ['example'], function() {
   karma.start(require('./dev/config/karma.js'));
 });
 
-gulp.task('example', function(){
+gulp.task('example', function() {
   connect.server({
     root: ['example', 'build'],
     port: 3000,
     livereload: true
   });
 
-  watch({glob: ['example/**', 'build/**']}).pipe(connect.reload());
+  watch({
+    glob: ['example/**', 'build/**']
+  }).pipe(connect.reload());
 });
 
 
