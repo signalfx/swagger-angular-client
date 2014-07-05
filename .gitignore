@@ -6,4 +6,6 @@
 /bower_components/
 
 # Generated
-/.sass-cache
+/build/
+/dist/
+/reports/

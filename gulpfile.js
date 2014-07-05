@@ -16,10 +16,8 @@ var source = require('vinyl-source-stream'),
   gutil = require('gulp-util'),
   es = require('event-stream'),
   fs = require('fs'),
-  livereload = require('gulp-livereload'),
-  connectLivereload = require('connect-livereload'),
-  connect = require('connect'),
-  serveStatic = require('serve-static'),
+  connect = require('gulp-connect'),
+  watch = require('gulp-watch'),
   path = require('path'),
   gulp = require('gulp');
 
@@ -30,7 +28,7 @@ var cssSrcDir = './src/css';
 var buildDir = './build';
 var distDir = './dist';
 
-gulp.task('default', ['min']);
+gulp.task('default', ['dist']);
 
 gulp.task('build', ['css', 'js']);
 gulp.task('build-min', ['css-min', 'js-min']);
@@ -46,22 +44,31 @@ gulp.task('clean', function(done) {
 
 // Incrementally build JavaScript and CSS files as they're modified and then
 // execute testing and linting tasks.
-gulp.task('dev', function() {
-  var server = connect();
+gulp.task('dev', ['example'], function() {
+  gulp.watch([
+    jsSrcDir + '/**/*.js', 
+    '!' + jsSrcDir + '/**/*Spec.js'
+  ], ['js']);
 
-  server.use(livereload.middleware({ server: server }))
-    .use(serveStatic('./example'))
-    .use(connectLivereload())
-    .listen(3000);
+  gulp.watch([
+    jsSrcDir + '/**/*.js',
+    'dev/**/*.js',
+    'gulpfile.js'
+  ], ['js-lint']);
 
-  var lr = livereload();
+  gulp.watch('./src/css/**/*.js', ['css', 'lint-css']);
 
-  gulp.watch('example/**').on('change', function(file){
-    lr.changed(file.path);
-  });
-  gulp.watch('./src/js/**/*.js', ['js', 'lint']);
-  gulp.watch('./src/css/**/*.js', ['css']);
   karma.start(require('./dev/config/karma.js'));
+});
+
+gulp.task('example', function(){
+  connect.server({
+    root: ['example', 'build'],
+    port: 3000,
+    livereload: true
+  });
+
+  watch({glob: ['example/**', 'build/**']}).pipe(connect.reload());
 });
 
 
@@ -118,7 +125,7 @@ gulp.task('clean-css', function(cb) {
 // Generates a CSS bundle of src/css/main.less and its dependencies using LESS
 // in the build directory with an embedded source map.
 gulp.task('css', ['clean-css'], function() {
-  return gulp.src(cssSrcDir + './main.less')
+  return gulp.src(cssSrcDir + '/main.less')
     .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(rename(pkg.name + '.css'))
@@ -152,11 +159,11 @@ gulp.task('test', function(done) {
   ), done);
 });
 
-gulp.task('lint', ['lint-js', 'lint-css']);
+gulp.task('lint', ['js-lint', 'css-lint']);
 
 // Runs the JavaScript source files via JSHint according to the options set in
 // ./dev/config/jshint.js.
-gulp.task('lint-js', function() {
+gulp.task('js-lint', function() {
   var config = require('./dev/config/jshint.js');
 
   return gulp.src([
@@ -171,7 +178,7 @@ gulp.task('lint-js', function() {
 
 // Runs the LESS source files via recess according to the options set in
 // ./dev/config/recess.js.
-gulp.task('lint-css', function() {
+gulp.task('css-lint', function() {
   var config = require('./dev/config/recess.js');
 
   return gulp.src(cssSrcDir + '/**/*.less')
