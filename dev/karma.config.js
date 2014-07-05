@@ -2,28 +2,23 @@ module.exports = {
     browsers: ['PhantomJS'],
     
     frameworks: [
-        'jasmine', 
-        'browserify'
+        'jasmine',
+        'commonjs'
     ],
     
     files: [
-        'src/js/module.js',
+        'src/js/**/*.js',
         'test/**/*.js'
     ],
 
-    reporters: ['coverage', 'progress'],
-
     preprocessors: {
-        'src/js/**/*.js': ['browserify', 'coverage']
+        '**/src/js/**/*.js' : ['coverage', 'commonjs']
     },
 
-    browserify: {
-        watch: true,
-        debug: true
-    },
+    reporters: ['progress', 'coverage'],
 
     coverageReporter: {
         type: 'html',
-        dir: 'report/'
+        dir: 'reports/coverage'
     }
 };

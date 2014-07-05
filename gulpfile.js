@@ -77,16 +77,10 @@ gulp.task('min-css', ['css'], function(){
 });
 
 gulp.task('js', ['clean-js'], function() {
-  function bundle() {
-    return bundler
+  return browserify(jsEntryPath)
       .bundle({debug: true})
       .pipe(source('module.js'))
-      .pipe(gulp.dest(buildDir))
-  }
-
-  var bundler = browserify(jsEntryPath);
-
-  return bundle();
+      .pipe(gulp.dest(buildDir));
 });
 
 gulp.task('min-js', ['js'], function(){

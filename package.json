@@ -28,7 +28,12 @@
     "karma-jasmine": "^0.2.2",
     "karma-phantomjs-launcher": "^0.1.4",
     "karma-coverage": "^0.2.4",
-    "karma-browserify": "^0.2.1"
+    "karma-browserify": "^0.2.1",
+    "gulp-istanbul": "^0.2.0",
+    "karma-traceur-preprocessor": "^0.2.2",
+    "gulp-traceur": "^0.7.0",
+    "es6ify": "^1.2.0",
+    "browserify-istanbul": "^0.1.1"
   },
   "scripts": {
     "test": "exit 1"
