@@ -1,6 +1,6 @@
 'use strict';
 
-var main = require('./main');
+var main = require('./seed');
 
 describe('Testing', function() {
   it('works', function() {

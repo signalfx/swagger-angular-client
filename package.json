@@ -4,9 +4,10 @@
   "private": true,
   "description": "",
   "keywords": [],
-  "main": "./src/js/main.js",
+  "main": "./src/js/seed.js",
   "devDependencies": {
     "gulp": "^3.8.5",
+    "boilerplate-gulp": "^0.1.0"
   },
   "directories": {
     "jsSrc": "./src/js",
@@ -28,15 +29,15 @@
   "licenses": [
     {
       "type": "Apache License 2.0",
-      "url": "https://github.com/NAME/blob/master/LICENSE-APACHE2"
+      "url": "https://github.com/seed/blob/master/LICENSE-APACHE2"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/NAME.git"
+    "url": "git://github.com/seed.git"
   },
   "bugs": {
-    "url": "https://github.com/NAME/issues"
+    "url": "https://github.com/seed/issues"
   },
-  "homepage": "https://github.com/NAME"
+  "homepage": "https://github.com/seed"
 }

@@ -1,38 +1,4 @@
+# Client-side Seed
 
-# Executable Tasks
-```sh
-# Build distributable files to dist/
-gulp
-
-# Run unit tests
-gulp test
-
-# Run coverage report
-gulp reports
-
-# Watch for changes to files, incrementally build them when
-# they change, and serve the example/ on port 3000
-gulp dev
-```
-
-# Folders
-build/
-local/
-dev/
-reports/
-src/
-example/
-test/
-
-# Technology
-gulp
-karma
-phantomjs
-browserify
-istanbul
-jasmine
-jsbeautifier
-jshint
-less
-csso
-uglify
+A very thin on top of [boilerplate-gulp](https://github.com/oztu/boilerplate-gulp) 
+to seed client-side packages by forking and modifying.
