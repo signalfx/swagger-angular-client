@@ -18,13 +18,15 @@
     "dev": "./dev",
     "example": "./example"
   },
-  "scripts": {
-    "test": "exit 1"
-  },
   "author": {
     "name": "Ozan Turgut",
     "email": "ozanturgut@gmail.com",
     "url": "http://ozan.io"
+  },
+  "scripts": {
+    "prepublish": "gulp",
+    "test": "gulp test",
+    "start": "gulp dev"
   },
   "licenses": [
     {
