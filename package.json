@@ -24,9 +24,9 @@
     "url": "http://ozan.io"
   },
   "scripts": {
-    "prepublish": "gulp",
-    "test": "gulp test",
-    "start": "gulp dev"
+    "prepublish": "node ./node_modules/gulp/bin/gulp.js",
+    "test": "node ./node_modules/gulp/bin/gulp.js test",
+    "start": "node ./node_modules/gulp/bin/gulp.js dev"
   },
   "licenses": [
     {
