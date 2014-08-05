@@ -1,6 +1,6 @@
 {
   "name": "seed",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "",
   "keywords": [],
@@ -31,15 +31,15 @@
   "licenses": [
     {
       "type": "Apache License 2.0",
-      "url": "https://github.com/seed/blob/master/LICENSE-APACHE2"
+      "url": "https://github.com/user/repo/blob/master/LICENSE-APACHE2"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/seed.git"
+    "url": "git://github.com/user/repo.git"
   },
   "bugs": {
-    "url": "https://github.com/seed/issues"
+    "url": "https://github.com/user/repo/issues"
   },
-  "homepage": "https://github.com/seed"
+  "homepage": "https://github.com/user/repo"
 }
