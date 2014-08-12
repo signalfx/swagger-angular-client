@@ -1,9 +1,9 @@
 {
   "name": "swagger-angular-client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "keywords": [],
-  "main": "./src/js/app.js",
+  "main": "./src/swaggerClient.js",
   "devDependencies": {
     "gulp": "^3.8.5",
     "boilerplate-gulp-angular": "^0.2.1",

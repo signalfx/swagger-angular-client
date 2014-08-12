@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="18"  lines-covered="18"  line-rate="1"  branches-valid="6"  branches-covered="5"  branch-rate="0.8332999999999999"  timestamp="1407878393827" complexity="0" version="0.1">
+<coverage lines-valid="18"  lines-covered="18"  line-rate="1"  branches-valid="6"  branches-covered="5"  branch-rate="0.8332999999999999"  timestamp="1407879114881" complexity="0" version="0.1">
 <sources>
 	<source>/Users/ozan/code/swagger-angular-client</source>
 </sources>

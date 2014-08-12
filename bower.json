@@ -1,6 +1,6 @@
 {
   "name": "swagger-angular-client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "keywords": [],
   "main": [
@@ -32,9 +32,11 @@
     "type": "git",
     "url": "git@github.com:signalfuse/swagger-angular-client.git"
   },
+  "devDependencies": {
+    "angular-mocks": "~1.2.21"
+  },
   "dependencies": {
-    "angular": "~1.2.21",
-    "angular-mocks": "~1.2.21",
+    "angular": "^1",
     "swagger-client-generator": "~0.2.4"
   }
 }
