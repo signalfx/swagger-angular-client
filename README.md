@@ -7,28 +7,7 @@ To use, include one of these files in your application:
 * *[swagger-angular-client.js](https://raw.githubusercontent.com/signalfuse/swagger-angular-client/master/dist/swagger-angular-client.js)*
 * *[swagger-angular-client.js.min](https://raw.githubusercontent.com/signalfuse/swagger-angular-client/master/dist/swagger-angular-client.min.js)*, a minified version ([source map](https://raw.githubusercontent.com/signalfuse/swagger-angular-client/master/dist/swagger-angular-client.min.js.map))
 
-You may also `bower install swagger-angular-client` to install using bower. Once you've included the script, you can include the `swagger-client` module as a dependency to your existing application and configure the provider with your schemas:
-
-```javascript
-angular.module('myApp', ['swagger-client'])
-    .configure(function(swaggerClientProvider){
-        // Configure which schemas map to which api.
-        swaggerClientProvider.add('MyFirstApi', schema1);
-        swaggerClientProvider.add('MySecondApi', schema2);
-    })
-    .run(function(swaggerClient){
-        // Start using your api clients
-        swaggerClient.MyFirstApi.auth('my-token');
-        swaggerClient.MyFirstApi.aResource.anOperation('argument')
-            .then(function(response){
-                console.log('response:', response);
-            })
-            .catch(function(error){
-                // error could be a validation error or an http response that's not in the 200s.
-                console.log('error', error);
-            });
-    });
-```
+You may also `bower install swagger-angular-client` to install using bower. Once you've included the script, you can include the `swagger-client` module as a dependency to your existing application and use the swaggerClient service to generate api clients.
 
 Schemas can be generated using [fetch-swagger-schema](https://github.com/signalfuse/fetch-swagger-schema).
 
@@ -51,16 +30,12 @@ Schemas can be generated using [fetch-swagger-schema](https://github.com/signalf
 
   <script>
   angular.module('myApp', ['swagger-client'])
-    .config(function(swaggerClientProvider){
-      // Add the schema to the provider
-      swaggerClientProvider.add('PetStore', PetStoreSchema);
-    })
     .run(function($rootScope, swaggerClient){
-      var api = swaggerClient.PetStore;
+      var api = swaggerClient(PetStoreSchema);
       
       api.auth('secret-key');
       api.pet.addPet({id: 1, name: 'Bob'}).then(function(){
-        return swaggerClient.PetStore.pet.getPetById(1);
+        return api.pet.getPetById(1);
       }).then(function(pet){
         $rootScope.pet = pet;
       });

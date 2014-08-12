@@ -8,19 +8,16 @@
 <body ng-app="myApp" ng-cloak>
 	Pet: {{ pet.name || 'Loading...' }}
 
-  <script src="swagger-client.js"></script>
+  <script src="swagger-angular-client.js"></script>
   <script src="petStoreSchema.js"></script>
   <script>
   angular.module('myApp', ['swagger-client'])
-    .config(function(swaggerClientProvider){
-      swaggerClientProvider.add('PetStore', PetStoreSchema);
-    })
     .run(function($rootScope, swaggerClient){
-      var api = swaggerClient.PetStore;
+      var api = swaggerClient(PetStoreSchema);
       
       api.auth('secret-key');
       api.pet.addPet({id: 1, name: 'Bob'}).then(function(){
-        return swaggerClient.PetStore.pet.getPetById(1);
+        return api.pet.getPetById(1);
       }).then(function(pet){
         $rootScope.pet = pet;
       });

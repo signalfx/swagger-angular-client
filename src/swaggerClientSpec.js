@@ -8,12 +8,7 @@ describe('Swagger Client Provider', function() {
   var $httpBackend;
 
   beforeEach(function(){
-    var testModule = angular.module('test', function(){});
-    m('swagger-client', 'test');
-
-    testModule.config(function(swaggerClientProvider){
-      swaggerClientProvider.add('PetStore', schema);
-    });
+    m('swagger-client');
 
     inject(function($injector){
       $httpBackend = $injector.get('$httpBackend');
@@ -33,7 +28,8 @@ describe('Swagger Client Provider', function() {
     $httpBackend.expectGET('http://petstore.swagger.wordnik.com/api/pet/1')
       .respond(response);
     
-    var result = swaggerClient.PetStore.pet.getPetById(1);
+    var api = swaggerClient(schema);
+    var result = api.pet.getPetById(1);
 
     result.then(function(pet){
       expect(pet).toEqual(response);
@@ -52,7 +48,8 @@ describe('Swagger Client Provider', function() {
     $httpBackend.expectGET('http://petstore.swagger.wordnik.com/api/pet/1')
       .respond(response);
     
-    var result = swaggerClient.PetStore.pet.getPetById();
+    var api = swaggerClient(schema);
+    var result = api.pet.getPetById();
 
     result.then(function(){
       throw new Error('Promise was resolved when it should have been rejected');

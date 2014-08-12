@@ -1,6 +1,6 @@
 {
   "name": "swagger-angular-client",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "AngularJS service for communicating with endpoints described by swagger",
   "keywords": [
     "angular",
@@ -11,7 +11,7 @@
   "main": "./src/swaggerClient.js",
   "devDependencies": {
     "gulp": "^3.8.5",
-    "boilerplate-gulp-angular": "^0.2.1",
+    "boilerplate-gulp-angular": "^0.1.0",
     "bower": "^1.3.8"
   },
   "author": {
