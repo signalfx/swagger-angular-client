@@ -1,8 +1,13 @@
 {
   "name": "swagger-angular-client",
-  "version": "0.1.1",
-  "description": "",
-  "keywords": [],
+  "version": "0.1.2",
+  "description": "AngularJS service for communicating with endpoints described by swagger",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "swagger",
+    "api"
+  ],
   "main": "./src/swaggerClient.js",
   "devDependencies": {
     "gulp": "^3.8.5",

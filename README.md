@@ -32,7 +32,6 @@ angular.module('myApp', ['swagger-client'])
 
 Schemas can be generated using [fetch-swagger-schema](https://github.com/signalfuse/fetch-swagger-schema).
 
-
 # Example
 ```html
 <!DOCTYPE html>
