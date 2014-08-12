@@ -2,11 +2,29 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <link type="text/css" rel="stylesheet" href="seed.css" />
-  <script src="seed.js"></script>
+  <title>Example</title>
+  <script src="angular/angular.js"></script>
 </head>
-<body>
-	Hello,  world!!
+<body ng-app="myApp" ng-cloak>
+	Pet: {{ pet.name || 'Loading...' }}
+
+  <script src="swagger-client.js"></script>
+  <script src="petStoreSchema.js"></script>
+  <script>
+  angular.module('myApp', ['swagger-client'])
+    .config(function(swaggerClientProvider){
+      swaggerClientProvider.add('PetStore', PetStoreSchema);
+    })
+    .run(function($rootScope, swaggerClient){
+      var api = swaggerClient.PetStore;
+      
+      api.auth('secret-key');
+      api.pet.addPet({id: 1, name: 'Bob'}).then(function(){
+        return swaggerClient.PetStore.pet.getPetById(1);
+      }).then(function(pet){
+        $rootScope.pet = pet;
+      });
+    }); 
+  </script>
 </body>
 </html>

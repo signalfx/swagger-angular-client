@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage lines-valid="18"  lines-covered="18"  line-rate="1"  branches-valid="6"  branches-covered="5"  branch-rate="0.8332999999999999"  timestamp="1407878393822" complexity="0" version="0.1">
+<sources>
+	<source>/Users/ozan/code/swagger-angular-client</source>
+</sources>
+<packages>
+	<package name="src"  line-rate="1"  branch-rate="0.8332999999999999" >
+	<classes>
+		<class name="swaggerClient.js"  filename="src/swaggerClient.js"  line-rate="1"  branch-rate="0.8332999999999999" >
+		<methods>
+			<method name="(anonymous_1)"  hits="3"  signature="()V" >
+				<lines><line number="7"  hits="3" /></lines>
+			</method>
+			<method name="(anonymous_2)"  hits="3"  signature="()V" >
+				<lines><line number="10"  hits="3" /></lines>
+			</method>
+			<method name="(anonymous_3)"  hits="3"  signature="()V" >
+				<lines><line number="15"  hits="3" /></lines>
+			</method>
+			<method name="requestHandler"  hits="2"  signature="()V" >
+				<lines><line number="18"  hits="2" /></lines>
+			</method>
+			<method name="(anonymous_5)"  hits="1"  signature="()V" >
+				<lines><line number="29"  hits="1" /></lines>
+			</method>
+			<method name="(anonymous_6)"  hits="3"  signature="()V" >
+				<lines><line number="34"  hits="3" /></lines>
+			</method>
+		</methods>
+		<lines>
+			<line number="3"  hits="1"  branch="false" />
+			<line number="6"  hits="1"  branch="false" />
+			<line number="8"  hits="3"  branch="false" />
+			<line number="10"  hits="3"  branch="false" />
+			<line number="11"  hits="3"  branch="true"  condition-coverage="75% (3/4)" />
+			<line number="12"  hits="3"  branch="false" />
+			<line number="15"  hits="3"  branch="false" />
+			<line number="16"  hits="3"  branch="false" />
+			<line number="18"  hits="1"  branch="false" />
+			<line number="19"  hits="2"  branch="true"  condition-coverage="100% (2/2)" />
+			<line number="20"  hits="1"  branch="false" />
+			<line number="21"  hits="1"  branch="false" />
+			<line number="24"  hits="1"  branch="false" />
+			<line number="30"  hits="1"  branch="false" />
+			<line number="34"  hits="3"  branch="false" />
+			<line number="35"  hits="3"  branch="false" />
+			<line number="38"  hits="3"  branch="false" />
+			<line number="41"  hits="3"  branch="false" />
+		</lines>
+		</class>
+	</classes>
+	</package>
+</packages>
+</coverage>

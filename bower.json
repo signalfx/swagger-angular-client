@@ -1,14 +1,12 @@
 {
-  "name": "seed",
-  "private": true,
+  "name": "swagger-angular-client",
   "version": "0.1.0",
   "description": "",
   "keywords": [],
   "main": [
-    "dist/seed.css",
-    "dist/seed.js"
+    "dist/swagger-angular-client.js"
   ],
-  "homepage": "https://github.com/user/repo",
+  "homepage": "https://github.com/signalfuse/swagger-angular-client",
   "authors": [
     "Ozan Turgut <ozanturgut@gmail.com>"
   ],
@@ -32,7 +30,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:user/repo.git"
+    "url": "git@github.com:signalfuse/swagger-angular-client.git"
   },
-  "dependencies": {}
+  "dependencies": {
+    "angular": "~1.2.21",
+    "angular-mocks": "~1.2.21",
+    "swagger-client-generator": "~0.2.4"
+  }
 }
