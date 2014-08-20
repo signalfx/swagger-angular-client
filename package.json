@@ -1,6 +1,6 @@
 {
   "name": "swagger-angular-client",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "AngularJS service for communicating with endpoints described by swagger",
   "keywords": [
     "angular",
