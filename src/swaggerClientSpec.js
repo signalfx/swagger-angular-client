@@ -59,4 +59,28 @@ describe('Swagger Client Provider', function() {
 
     $rootScope.$apply();
   }));
+
+  it('strips angular hashkeys', inject(function($rootScope, swaggerClient){
+    var response = {
+      petId: 1,
+      name: 'bob'
+    };
+
+    $httpBackend.expectPOST('http://petstore.swagger.wordnik.com/api/pet')
+      .respond(response);
+    
+    var api = swaggerClient(schema);
+    api.auth('1234');
+    var result = api.pet.addPet({
+      $$hashKey: '1234',
+      id: 0,
+      name: 'bob'
+    });
+
+    result.then(function(pet){
+      expect(pet).toEqual(response);
+    }).catch(function(e){console.log('err', e);});
+
+    $httpBackend.flush();
+  }));
 });

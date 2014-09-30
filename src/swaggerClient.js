@@ -11,6 +11,13 @@ angular.module('swagger-client', [])
         return $q.reject(error);
       }
 
+      // Strip $$hashKeys from the body if json
+      try {
+        request.body = angular.toJson(JSON.parse(request.body));
+      } catch(e){
+        
+      }
+      
       return $http({
         method: request.method,
         url: request.url,
