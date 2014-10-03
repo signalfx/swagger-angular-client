@@ -1,6 +1,6 @@
 {
   "name": "swagger-angular-client",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "AngularJS service for communicating with endpoints described by swagger",
   "keywords": [
     "angular",
@@ -27,15 +27,15 @@
   "licenses": [
     {
       "type": "Apache License 2.0",
-      "url": "https://github.com/signalfuse/swagger-angular-client/blob/master/LICENSE-APACHE2"
+      "url": "https://github.com/signalfx/swagger-angular-client/blob/master/LICENSE-APACHE2"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/signalfuse/swagger-angular-client.git"
+    "url": "git://github.com/signalfx/swagger-angular-client.git"
   },
   "bugs": {
-    "url": "https://github.com/signalfuse/swagger-angular-client/issues"
+    "url": "https://github.com/signalfx/swagger-angular-client/issues"
   },
-  "homepage": "https://github.com/signalfuse/swagger-angular-client"
+  "homepage": "https://github.com/signalfx/swagger-angular-client"
 }

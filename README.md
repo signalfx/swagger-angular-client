@@ -4,12 +4,12 @@
 
 # Usage
 To use, include one of these files in your application: 
-* *[swagger-angular-client.js](https://raw.githubusercontent.com/signalfuse/swagger-angular-client/master/dist/swagger-angular-client.js)*
-* *[swagger-angular-client.js.min](https://raw.githubusercontent.com/signalfuse/swagger-angular-client/master/dist/swagger-angular-client.min.js)*, a minified version ([source map](https://raw.githubusercontent.com/signalfuse/swagger-angular-client/master/dist/swagger-angular-client.min.js.map))
+* *[swagger-angular-client.js](https://raw.githubusercontent.com/signalfx/swagger-angular-client/master/dist/swagger-angular-client.js)*
+* *[swagger-angular-client.js.min](https://raw.githubusercontent.com/signalfx/swagger-angular-client/master/dist/swagger-angular-client.min.js)*, a minified version ([source map](https://raw.githubusercontent.com/signalfx/swagger-angular-client/master/dist/swagger-angular-client.min.js.map))
 
 You may also `bower install swagger-angular-client` to install using bower. Once you've included the script, you can include the `swagger-client` module as a dependency to your existing application and use the swaggerClient service to generate api clients.
 
-Schemas can be generated using [fetch-swagger-schema](https://github.com/signalfuse/fetch-swagger-schema).
+Schemas can be generated using [fetch-swagger-schema](https://github.com/signalfx/fetch-swagger-schema).
 
 # Example
 ```html

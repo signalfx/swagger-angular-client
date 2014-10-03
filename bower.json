@@ -11,7 +11,7 @@
   "main": [
     "dist/swagger-angular-client.js"
   ],
-  "homepage": "https://github.com/signalfuse/swagger-angular-client",
+  "homepage": "https://github.com/signalfx/swagger-angular-client",
   "authors": [
     "Ozan Turgut <ozanturgut@gmail.com>"
   ],
@@ -36,7 +36,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:signalfuse/swagger-angular-client.git"
+    "url": "git@github.com:signalfx/swagger-angular-client.git"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.21",
