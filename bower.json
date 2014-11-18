@@ -1,6 +1,6 @@
 {
   "name": "swagger-angular-client",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "AngularJS service for communicating with endpoints described by swagger",
   "keywords": [
     "angular",
@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "angular-mocks": "~1.2.21",
-    "swagger-client-generator": "~0.2.10"
+    "swagger-client-generator": "~0.2.11"
   },
   "dependencies": {
     "angular": "^1"
