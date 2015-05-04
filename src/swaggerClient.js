@@ -4,7 +4,7 @@ var clientGenerator = require('../bower_components/swagger-client-generator/dist
 
 /* global angular */
 angular.module('swagger-client', [])
-  .factory('swaggerClient', function($log, $http, $q){
+  .factory('swaggerClient', ['$log', '$http', '$q', function($log, $http, $q){
     function requestHandler(error, request){
       if(error){
         $log.error(error);
@@ -15,9 +15,9 @@ angular.module('swagger-client', [])
       try {
         request.body = angular.toJson(JSON.parse(request.body));
       } catch(e){
-        
+
       }
-      
+
       return $http({
         method: request.method,
         url: request.url,
@@ -31,4 +31,4 @@ angular.module('swagger-client', [])
     return function(schema){
       return clientGenerator(schema, requestHandler);
     };
-  });
+  }]);
