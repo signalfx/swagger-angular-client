@@ -1,6 +1,6 @@
 # swagger-angular-client
 
-> AngularJS service for communicating with endpoints described by [swagger](https://github.com/wordnik/swagger-spec/blob/master/versions/1.2.md).
+> AngularJS service for communicating with endpoints described by [swagger](https://github.com/wordnik/swagger-spec/blob/master/versions/1.2.md) v1.2.
 
 # Usage
 To use, include one of these files in your application:
