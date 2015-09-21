@@ -3,7 +3,7 @@
 > AngularJS service for communicating with endpoints described by [swagger](https://github.com/wordnik/swagger-spec/blob/master/versions/1.2.md).
 
 # Usage
-To use, include one of these files in your application: 
+To use, include one of these files in your application:
 * *[swagger-angular-client.js](https://raw.githubusercontent.com/signalfx/swagger-angular-client/master/dist/swagger-angular-client.js)*
 * *[swagger-angular-client.js.min](https://raw.githubusercontent.com/signalfx/swagger-angular-client/master/dist/swagger-angular-client.min.js)*, a minified version ([source map](https://raw.githubusercontent.com/signalfx/swagger-angular-client/master/dist/swagger-angular-client.min.js.map))
 
@@ -11,7 +11,7 @@ You may also `bower install swagger-angular-client` to install using bower. Once
 
 Schemas can be generated using [fetch-swagger-schema](https://github.com/signalfx/fetch-swagger-schema).
 
-# Example
+# Simple Example
 ```html
 <!DOCTYPE html>
 <html>
@@ -32,15 +32,71 @@ Schemas can be generated using [fetch-swagger-schema](https://github.com/signalf
   angular.module('myApp', ['swagger-client'])
     .run(function($rootScope, swaggerClient){
       var api = swaggerClient(PetStoreSchema);
-      
+
       api.auth('secret-key');
       api.pet.addPet({id: 1, name: 'Bob'}).then(function(){
         return api.pet.getPetById(1);
       }).then(function(pet){
         $rootScope.pet = pet;
       });
-    }); 
+    });
   </script>
 </body>
 </html>
+```
+
+# Real-world Example
+```javascript
+'use strict';
+
+// First, we need to define a provider for the api client, we'll call it 'myAPI'
+angular.module('data').provider('myAPI',
+['window', function(window){
+  var schema = window.API_SCHEMA,
+    auth;
+
+  // Override the base path to enable pointing to different backends
+  this.basePath = function(basePath){
+    schema.apis.forEach(function(api){
+      api.apiDeclaration.basePath = basePath;
+    });
+  };
+
+  // Allows for setting the auth token during .config() phase of app start up.
+  this.auth = function(authToken){
+    auth = authToken;
+  };
+
+  // Instantiates the swagger-angular-client
+  this.$get = ['$rootScope', 'swaggerClient', function($rootScope, swaggerClient){
+    var api = swaggerClient(schema);
+    api.authorization(auth);
+
+    // Handle any future api token changes
+    $rootScope.$on('api token changed', function($event, authToken){
+      api.authorization(authToken);
+    });
+
+    return api;
+  }];
+}])
+
+// Now we'll configure myAPI during app start up by setting the auth token.
+// You would decide where this token comes from. Maybe it's ok to embed directly
+// in the code. Maybe it comes from a cookie. Maybe you don't even need auth.
+// This all depends on your auth scheme.
+.config(['myAPIProvider', function(myAPIProvider){
+  myAPIProvider.auth(THE_TOKEN);
+}])
+
+// Finally, we can start using myAPI in the application
+.run(['myAPI', function(myAPI){
+  // This would be an application-specific call. In this example, we make an
+  // http request to a api endpoint to notify the metrics resource that the
+  // application has loaded.
+  myAPI.metrics.appLoaded({
+    time: Date.now()
+  });
+}]);
+
 ```
